@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     yeoman: {
       // configurable paths
       app: 'app',
-      scripts: 'scripts',
+      scripts: 'src',
       styles: 'styles',
       images: 'images',
       test: 'test',
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'development',
-            apiEndpoint: 'http://dev.yoursite.com:10000/'
+            apiEndpoint: 'http://localhost:8086/'
           }
         }
       },
@@ -239,7 +239,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'templates/**/*.html'],
+          src: ['*.html', '**/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -256,7 +256,7 @@ module.exports = function (grunt) {
           src: [
             '<%= yeoman.images %>/**/*.{png,jpg,jpeg,gif,webp,svg}',
             '*.html',
-            'templates/**/*.html',
+            '**/*.html',
             'fonts/*'
           ]
         }, {
@@ -374,7 +374,7 @@ module.exports = function (grunt) {
         ],
         autoWatch: false,
         reporters: ['dots', 'coverage'],
-        port: 8080,
+        port: 8085,
         singleRun: false,
         preprocessors: {
           // Update this if you change the yeoman config path
@@ -395,7 +395,7 @@ module.exports = function (grunt) {
       },
       continuous: {
         browsers: ['PhantomJS'],
-        singleRun: true,
+        singleRun: true
       }
     },
 
